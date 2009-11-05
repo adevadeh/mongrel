@@ -148,7 +148,7 @@ module Mongrel
         require 'dispatcher'
         require 'mongrel/rails'
 
-        ActionController::AbstractRequest.relative_url_root = ops[:prefix] if ops[:prefix]
+        ActionController::Base.relative_url_root = ops[:prefix] if ops[:prefix]
 
         @rails_handler = RailsHandler.new(ops[:docroot], ops[:mime])
       end
